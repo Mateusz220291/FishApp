@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import classes from "./CatchForm.module.css";
+import Button from "../UI/button";
 
-import "./NewCatch.css";
-
-function CatchForm(props) {
+const CatchForm = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredLure, setEnteredLure] = useState("");
   const [enteredLenght, setEnteredLenght] = useState("");
@@ -47,10 +47,11 @@ function CatchForm(props) {
     setEnteredNotes(event.target.value);
   };
   return (
-    <div>
+    <div className={classes["list-container"]}>
+      <h1>Lets register your new catch!</h1>
       <form action="" onSubmit={submitHandler}>
-        <div className="new-fish__controls">
-          <div className="new-fish__control">
+        <div className={classes["new-fish__controls"]}>
+          <div className={classes["new-fish__control"]}>
             <label htmlFor="">Species</label>
             <select
               id="species"
@@ -65,7 +66,7 @@ function CatchForm(props) {
               </option>
             </select>
           </div>
-          <div className="new-fish__control">
+          <div className={classes["new-fish__control"]}>
             <label htmlFor="">Lenght</label>
             <input
               type="number"
@@ -75,7 +76,7 @@ function CatchForm(props) {
               onChange={lenghtChangeHandler}
             />
           </div>
-          <div className="new-fish__control">
+          <div className={classes["new-fish__control"]}>
             <label htmlFor="">Weight</label>
             <input
               type="number"
@@ -85,7 +86,7 @@ function CatchForm(props) {
               onChange={weightChangeHandler}
             />
           </div>
-          <div className="new-fish__control">
+          <div className={classes["new-fish__control"]}>
             <label htmlFor="">Lure</label>
             <input
               type="text"
@@ -93,7 +94,7 @@ function CatchForm(props) {
               onChange={lureChangeHandler}
             />
           </div>
-          <div className="new-fish__control">
+          <div className={classes["new-fish__control"]}>
             <label htmlFor="">Date</label>
             <input
               type="date"
@@ -102,7 +103,7 @@ function CatchForm(props) {
               onChange={dateChangeHandler}
             />
           </div>
-          <div className="new-fish__control">
+          <div className={classes["new-fish__control"]}>
             <label htmlFor="">Notes</label>
             <textarea
               type="text"
@@ -110,13 +111,13 @@ function CatchForm(props) {
               onChange={notesChangeHandler}
             />
           </div>
-          <div className="new-fish__actions">
-            <button type="submit">Add fish</button>
+          <div className={classes["new-fish__control"]}>
+            <Button type="submit" description="Add Catch"></Button>
           </div>
         </div>
       </form>
     </div>
   );
-}
+};
 
 export default CatchForm;

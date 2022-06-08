@@ -1,5 +1,6 @@
 import React from "react";
 import CatchForm from "./CatchForm";
+import classes from "./NewCatch.module.css";
 
 const NewCatch = (props) => {
   const saveCatchDataHandler = (enteredCatchData) => {
@@ -10,7 +11,7 @@ const NewCatch = (props) => {
     props.onAddCatch(catchData);
   };
   return (
-    <div className="new-catch">
+    <div className={classes["new-catch"]}>
       <CatchForm onSaveCatchData={saveCatchDataHandler}></CatchForm>
     </div>
   );

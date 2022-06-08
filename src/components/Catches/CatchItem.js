@@ -1,7 +1,7 @@
 import CatchDate from "./CatchDate";
 import classes from "./CatchItem.module.css";
 
-function CatchItem(props) {
+const CatchItem = (props) => {
   return (
     <div className={classes["catch-item"]}>
       <h2>{props.name}</h2>
@@ -37,6 +37,6 @@ function CatchItem(props) {
       </div>
     </div>
   );
-}
+};
 
 export default CatchItem;

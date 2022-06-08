@@ -1,4 +1,4 @@
-function CatchDate() {
+const CatchDate = () => {
   const catchDate = new Date(2022, 5, 27);
   const day = catchDate.toLocaleDateString("pl", { day: "2-digit" });
   const month = catchDate.toLocaleDateString("pl", { month: "long" });
@@ -12,6 +12,6 @@ function CatchDate() {
       <span>{year}</span>
     </div>
   );
-}
+};
 
 export default CatchDate;
