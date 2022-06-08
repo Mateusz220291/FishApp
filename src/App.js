@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import CatchList from "./components/Catches/CatchList";
+import NewCatch from "./components/NewCatch/NewCatch";
 
-function App() {
+const arr1 = [];
+
+const App = () => {
+  const [catches, setCatches] = useState(arr1);
+  const saveCatchDataHandler = (fish) => {
+    setCatches((prevCatches) => {
+      return [fish, ...prevCatches];
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NewCatch onAddCatch={saveCatchDataHandler} />
+      <CatchList items={catches}></CatchList>
+    </>
   );
-}
+};
 
 export default App;

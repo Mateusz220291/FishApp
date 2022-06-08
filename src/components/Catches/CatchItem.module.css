@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.catch-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #ddd;
+  color: black;
+  width: 500px;
+  border: 2px solid black;
+}
+
+.catch-item h2 {
+  text-align: center;
+}
+
+.catch-item__photo {
+  background-color: #777;
+  width: 40%;
+}
+
+.catch-item__description {
+  padding: 15px;
+}
